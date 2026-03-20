@@ -615,7 +615,7 @@ pfUI:RegisterModule("nampower", "vanilla", function ()
       bar:SetValue(baseMana)
 
       -- Always show current/max
-      bar.text:SetText(string.format("%s/%s", Abbreviate(baseMana), Abbreviate(baseMaxMana)))
+      -- bar.text:SetText(string.format("%s/%s", Abbreviate(baseMana), Abbreviate(baseMaxMana)))
 
       bar:Show()
     end
