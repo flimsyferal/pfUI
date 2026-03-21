@@ -1,39 +1,33 @@
 pfUI:RegisterSkin("RaidUI", "vanilla", function ()
   HookAddonOrVariable("Blizzard_RaidUI", function()
 
-    -- skin each RaidGroup frame (8 groups, each with a label + 5 slots)
-    for i = 1, NUM_RAID_GROUPS do
+    for i = 1, (NUM_RAID_GROUPS or 8) do
       local group = _G["RaidGroup"..i]
-      if group then
+      if group and group.GetRegions then
         StripTextures(group)
-        CreateBackdrop(group, nil, nil, .75)
 
-        local label = _G["RaidGroup"..i.."Label"]
-        if label then
-          label:SetFont(pfUI.font_default, C.global.font_size, "OUTLINE")
+        for j = 1, (MEMBERS_PER_RAID_GROUP or 5) do
+          local slot = _G["RaidGroup"..i.."Slot"..j]
+          if slot and slot.GetRegions then
+            StripTextures(slot)
+            CreateBackdrop(slot, nil, true)
+            SetHighlight(slot, 1, 1, 0)
+          end
         end
       end
     end
 
-    -- skin each RaidGroupButton (40 members)
-    for i = 1, MAX_RAID_MEMBERS do
+    for i = 1, (MAX_RAID_MEMBERS or 40) do
       local button = _G["RaidGroupButton"..i]
-      if button then
+      if button and button.GetRegions then
         StripTextures(button)
-        CreateBackdrop(button, nil, nil, .75)
-
-        local name  = _G["RaidGroupButton"..i.."Name"]
-        local level = _G["RaidGroupButton"..i.."Level"]
-        local class = _G["RaidGroupButton"..i.."Class"]
-        if name  then name:SetFont(pfUI.font_default,  C.global.font_size, "OUTLINE") end
-        if level then level:SetFont(pfUI.font_default, C.global.font_size, "OUTLINE") end
-        if class then class:SetFont(pfUI.font_default, C.global.font_size, "OUTLINE") end
+        CreateBackdrop(button, nil, true)
+        SetHighlight(button, 1, 1, 0)
       end
     end
 
-    -- skin the Add Member and Ready Check buttons on the RaidFrame panel
-    SkinButton(RaidFrameAddMemberButton)
-    SkinButton(RaidFrameReadyCheckButton)
+    if RaidFrameAddMemberButton  then SkinButton(RaidFrameAddMemberButton)  end
+    if RaidFrameReadyCheckButton then SkinButton(RaidFrameReadyCheckButton) end
 
   end)
 end)
