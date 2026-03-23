@@ -73,7 +73,7 @@ pfUI:RegisterModule("energytick", "vanilla:tbc", function()
         else
           this.badtick = diff
         end
-      elseif this.mode == "ENERGY" and diff >= 20 then
+      elseif this.mode == "ENERGY" and diff >= 0 then
         if not this.ignoreNextGain then
           this.target = getAdjustedTickTimer()
         end
