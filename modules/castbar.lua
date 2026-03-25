@@ -57,7 +57,7 @@ pfUI:RegisterModule("castbar", "vanilla", function ()
     cb.bar.left:SetNonSpaceWrap(false)
     cb.bar.left:SetFontObject(GameFontWhite)
     cb.bar.left:SetTextColor(1,1,1,1)
-    cb.bar.left:SetFont(font, font_size, "OUTLINE")
+    cb.bar.left:SetFont(font, font_size)
     cb.bar.left:SetJustifyH("left")
 
     -- text right
@@ -68,7 +68,7 @@ pfUI:RegisterModule("castbar", "vanilla", function ()
     cb.bar.right:SetNonSpaceWrap(false)
     cb.bar.right:SetFontObject(GameFontWhite)
     cb.bar.right:SetTextColor(1,1,1,1)
-    cb.bar.right:SetFont(font, font_size, "OUTLINE")
+    cb.bar.right:SetFont(font, font_size)
     cb.bar.right:SetJustifyH("right")
 
     cb.bar.lag = cb.bar:CreateTexture(nil, "OVERLAY")
