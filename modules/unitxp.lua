@@ -144,7 +144,7 @@ pfUI:RegisterModule("unitxp", "vanilla", function ()
         -- Free frame mode: movable standalone frame, same as rangedisplay module
         if not pfRangeDisplay then
           local f = CreateFrame("Frame", "pfRangeDisplay", UIParent)
-          f:SetWidth(90)
+          f:SetWidth(42)
           f:SetHeight(20)
           f:SetFrameStrata("MEDIUM")
           f:SetPoint("CENTER", UIParent, "CENTER", 0, -100)
