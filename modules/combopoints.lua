@@ -26,7 +26,7 @@ pfUI:RegisterModule("combopoints", "vanilla:tbc", function ()
     pfUI.combopoints[point].tex = pfUI.combopoints[point]:CreateTexture("OVERLAY")
     pfUI.combopoints[point].tex:SetAllPoints(pfUI.combopoints[point])
 
-    pfUI.combopoints[point].tex:SetTexture(0.2,1, 0.2, 0.8)
+    pfUI.combopoints[point].tex:SetTexture(1,1, 0, 0.9)
 
     UpdateMovable(pfUI.combopoints[point])
     CreateBackdrop(pfUI.combopoints[point])
