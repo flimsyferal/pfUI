@@ -30,10 +30,10 @@ pfUI:RegisterModule("nameplates", "vanilla", function ()
   local mathmod = math.mod
 
   local unitcolors = {
-    ["ENEMY_NPC"] = { .9, .2, .3, .8 },
-    ["NEUTRAL_NPC"] = { 1, 1, .3, .8 },
-    ["FRIENDLY_NPC"] = { .6, 1, 0, .8 },
-    ["ENEMY_PLAYER"] = { .9, .2, .3, .8 },
+    ["ENEMY_NPC"] = { 1, 0, 0, 1 },
+    ["NEUTRAL_NPC"] = { 1, 1, 0, 1 },
+    ["FRIENDLY_NPC"] = { .5, 1, 0, 1 },
+    ["ENEMY_PLAYER"] = { 1, .2, .3, 9 },
     ["FRIENDLY_PLAYER"] = { .2, .6, 1, .8 }
   }
 
